@@ -23,6 +23,24 @@ namespace SabaExample.Editor
                 "sabashader-core.png");
         }
 
+        public static void ExportShaderDebugSample()
+        {
+            Render("Assets/Samples/SabaShader/0.5.0/Debug Shader Demo/DebugShaderDemo.unity",
+                "sabashader-debug-modes.png");
+        }
+
+        public static void ExportShaderAdvancedSample()
+        {
+            Render("Assets/Samples/SabaShader/0.5.0/Advanced Shader Suite Demo/AdvancedShaderSuiteDemo.unity",
+                "sabashader-advanced-suite.png");
+        }
+
+        public static void ExportTreesPackageSample()
+        {
+            Render("Assets/Samples/SabaProps Trees/0.1.0/Trees Demo/TreesDemo.unity",
+                "trees-package-sample.png");
+        }
+
         private static void Render(string scenePath, string fileName)
         {
             EditorSceneManager.OpenScene(scenePath);

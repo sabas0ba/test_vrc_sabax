@@ -41,11 +41,13 @@ $foliageScene = Join-Path $repository 'projects/foliage/Assets/SabaProps/Foliage
 if (-not (Test-Path -LiteralPath $foliageScene)) {
     Invoke-UnityExample foliage foliage-scene SabaProps.Foliage.Editors.FoliageSampleScene.CreateAndOpen
 }
+Invoke-UnityExample foliage foliage-package-samples SabaExample.Editor.FoliagePackageSampleAudit.ImportAndInspect
 
 $treesScene = Join-Path $repository 'projects/world/Assets/SabaProps/TreesBundledDemo/TreesDemo.unity'
 if (-not (Test-Path -LiteralPath $treesScene)) {
     Invoke-UnityExample world trees-demo SabaProps.Trees.Editors.TreeBundledDemo.CreateAndOpen
 }
+Invoke-UnityExample world trees-package-samples SabaExample.Editor.TreesPackageSampleAudit.ImportAndInspect
 
 $putItemsScene = Join-Path $repository 'projects/world/Assets/SabaProps/PutItemsKitchenDemoV2/PutItemsKitchen.unity'
 if (-not (Test-Path -LiteralPath $putItemsScene)) {
@@ -56,6 +58,7 @@ $softPropsScene = Join-Path $repository 'projects/world/Assets/SabaProps/SoftPro
 if (-not (Test-Path -LiteralPath $softPropsScene)) {
     Invoke-UnityExample world softprops-demo SabaProps.SoftProps.Editors.SoftPropsDemo.OpenDemo
 }
+Invoke-UnityExample world softprops-generator SabaExample.Editor.SoftPropsGeneratorAudit.GenerateAndInspect
 
 $shaderScene = Join-Path $repository 'projects/world/Assets/Examples/SabaShader/CoreShaders.unity'
 if (-not (Test-Path -LiteralPath $shaderScene)) {
@@ -68,6 +71,11 @@ if (-not (Test-Path -LiteralPath $haloScene)) {
 }
 
 Invoke-UnityExample world world-playmode-setup SabaExample.Editor.WorldPlayModeSetup.Prepare
+Invoke-UnityExample world trees-generation SabaExample.Editor.TreesGenerationAudit.GenerateAndInspect
+Invoke-UnityExample world sabashader-debug-import SabaExample.Editor.SabaShaderDebugSampleAudit.Import
+Invoke-UnityExample world sabashader-debug-audit SabaExample.Editor.SabaShaderDebugSampleAudit.Inspect
+Invoke-UnityExample world sabashader-advanced-import SabaExample.Editor.SabaShaderAdvancedSampleAudit.Import
+Invoke-UnityExample world sabashader-advanced-audit SabaExample.Editor.SabaShaderAdvancedSampleAudit.Inspect
 
 $robotScene = Join-Path $repository 'projects/avatar/Packages/com.vrchat.avatars/Samples/Dynamics/Robot Avatar/Avatar Dynamics Robot Avatar PC.unity'
 $inspectScenes = @($treesScene, $putItemsScene, $softPropsScene, $shaderScene, $haloScene, $robotScene)
@@ -79,6 +87,7 @@ if ($VerifyReadOnly) {
 }
 
 Invoke-UnityExample world sabatools-reports SabaExample.Editor.SabaToolsReportExporter.Export
+Invoke-UnityExample world sabatools-target-audit SabaExample.Editor.SabaToolsTargetAudit.Inspect
 Invoke-UnityExample avatar avatar-audit SabaExample.Editor.AvatarExamplesAudit.Run
 
 if ($VerifyReadOnly) {
@@ -93,7 +102,11 @@ if ($VerifyReadOnly) {
 
 if ($RenderImages) {
     Invoke-UnityExample foliage foliage-screenshot SabaExample.Editor.FoliageScreenshotExporter.Export -Graphics
+    Invoke-UnityExample foliage foliage-package-screenshot SabaExample.Editor.FoliageScreenshotExporter.ExportPackageSample -Graphics
     Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldExampleScreenshotExporter.ExportProps -Graphics
+    Invoke-UnityExample world trees-package-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportTreesPackageSample -Graphics
     Invoke-UnityExample world sabashader-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShader -Graphics
+    Invoke-UnityExample world sabashader-debug-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShaderDebugSample -Graphics
+    Invoke-UnityExample world sabashader-advanced-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShaderAdvancedSample -Graphics
     Invoke-UnityExample avatar digitalhalo-screenshot SabaExample.Editor.AccessoryScreenshotExporter.Export -Graphics
 }

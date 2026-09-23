@@ -14,3 +14,5 @@
 導入順とプロジェクト構成は [セットアップ](docs/setup.md) を参照してください。配布状態と検証の進捗は [対象一覧](docs/status.md)、確認した不整合は [観察記録](docs/observations.md)、不具合・違和感の記録方法は [報告方法](docs/reporting.md) に記載しています。
 
 このリポジトリの記録は配布パッケージを変更しません。VRChat クライアント内の動作は未確認です。再現手順と証拠をここに保存し、対象リポジトリへの報告をリンクします。
+
+公開版: [GitHub Pages](https://sabas0ba.github.io/test_vrc_sabax/)。2026-09-23 に主要ページ・レポート・画像の21パスを [公開状態検査](scripts/check-pages.sh) で確認しました。

@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shaderSettings:
   - shadername: SabaShader/Illust2D
-    modules: []
+    modules:
+    - io.github.sabas0ba.decal
+    - io.github.sabas0ba.surfacedetail
+    - io.github.sabas0ba.spatialinterior
+    - io.github.sabas0ba.transition
     multiModules: []
   - shadername: SabaShader/Debug
     modules: []

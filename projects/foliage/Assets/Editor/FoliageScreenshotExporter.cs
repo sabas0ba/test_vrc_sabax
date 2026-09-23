@@ -9,11 +9,22 @@ namespace SabaExample.Editor
     {
         public static void Export()
         {
-            EditorSceneManager.OpenScene(
-                "Assets/SabaProps/Foliage/Samples/FoliageDemo.unity");
+            Render("Assets/SabaProps/Foliage/Samples/FoliageDemo.unity",
+                "foliage-demo.png");
+        }
+
+        public static void ExportPackageSample()
+        {
+            Render("Assets/Samples/SabaProps Foliage/0.6.0/Foliage Demo/FoliageSpeciesDemo.unity",
+                "foliage-species-demo.png");
+        }
+
+        private static void Render(string scenePath, string fileName)
+        {
+            EditorSceneManager.OpenScene(scenePath);
             Camera camera = Camera.main;
             if (camera == null)
-                throw new InvalidOperationException("Foliage demo has no MainCamera");
+                throw new InvalidOperationException(scenePath + " has no MainCamera");
 
             const int width = 1280;
             const int height = 720;
@@ -33,7 +44,7 @@ namespace SabaExample.Editor
                 string repository = Path.GetFullPath(
                     Path.Combine(Application.dataPath, "../../.."));
                 string output = Path.Combine(repository, "docs", "images",
-                    "foliage-demo.png");
+                    fileName);
                 Directory.CreateDirectory(Path.GetDirectoryName(output));
                 File.WriteAllBytes(output, screenshot.EncodeToPNG());
                 Debug.Log("[SabaProps example] Screenshot: " + output);
