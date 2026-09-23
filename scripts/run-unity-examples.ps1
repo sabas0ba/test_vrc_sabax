@@ -1,6 +1,7 @@
 param(
     [string]$UnityEditor = 'C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe',
-    [switch]$RenderImages
+    [switch]$RenderImages,
+    [switch]$VerifyReadOnly
 )
 
 $ErrorActionPreference = 'Stop'
@@ -60,15 +61,36 @@ $shaderScene = Join-Path $repository 'projects/world/Assets/Examples/SabaShader/
 if (-not (Test-Path -LiteralPath $shaderScene)) {
     Invoke-UnityExample world sabashader-example SabaExample.Editor.SabaShaderShowcase.Create
 }
-Invoke-UnityExample world sabatools-reports SabaExample.Editor.SabaToolsReportExporter.Export
 
 $haloScene = Join-Path $repository 'projects/avatar/Assets/Samples/SabaAccessory Digital Halo/0.2.1/Digital Halo Demo/DigitalHaloDemo.unity'
 if (-not (Test-Path -LiteralPath $haloScene)) {
     Invoke-UnityExample avatar digitalhalo-demo SabaAccessory.DigitalHalo.Editor.DigitalHaloDemoInstaller.ImportAndOpenForValidation
 }
+
+$robotScene = Join-Path $repository 'projects/avatar/Packages/com.vrchat.avatars/Samples/Dynamics/Robot Avatar/Avatar Dynamics Robot Avatar PC.unity'
+$inspectScenes = @($treesScene, $putItemsScene, $softPropsScene, $shaderScene, $haloScene, $robotScene)
+$hashesBefore = @{}
+if ($VerifyReadOnly) {
+    foreach ($scene in $inspectScenes) {
+        $hashesBefore[$scene] = (Get-FileHash -LiteralPath $scene -Algorithm SHA256).Hash
+    }
+}
+
+Invoke-UnityExample world sabatools-reports SabaExample.Editor.SabaToolsReportExporter.Export
 Invoke-UnityExample avatar avatar-audit SabaExample.Editor.AvatarExamplesAudit.Run
+
+if ($VerifyReadOnly) {
+    foreach ($scene in $inspectScenes) {
+        $after = (Get-FileHash -LiteralPath $scene -Algorithm SHA256).Hash
+        if ($after -ne $hashesBefore[$scene]) {
+            throw "Inspection changed a scene file: $scene"
+        }
+    }
+    Write-Output "Verified $($inspectScenes.Count) scene files unchanged by inspection."
+}
 
 if ($RenderImages) {
     Invoke-UnityExample foliage foliage-screenshot SabaExample.Editor.FoliageScreenshotExporter.Export -Graphics
-    Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldPropsScreenshotExporter.Export -Graphics
+    Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldExampleScreenshotExporter.ExportProps -Graphics
+    Invoke-UnityExample world sabashader-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShader -Graphics
 }

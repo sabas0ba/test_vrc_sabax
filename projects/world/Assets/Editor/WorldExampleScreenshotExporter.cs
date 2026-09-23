@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace SabaExample.Editor
 {
-    public static class WorldPropsScreenshotExporter
+    public static class WorldExampleScreenshotExporter
     {
-        public static void Export()
+        public static void ExportProps()
         {
             Render("Assets/SabaProps/TreesBundledDemo/TreesDemo.unity",
                 "trees-demo.png");
@@ -15,6 +15,12 @@ namespace SabaExample.Editor
                 "putitems-demo.png");
             Render("Assets/SabaProps/SoftPropsDemoMotion/SoftPropsDemo.unity",
                 "softprops-demo.png");
+        }
+
+        public static void ExportShader()
+        {
+            Render("Assets/Examples/SabaShader/CoreShaders.unity",
+                "sabashader-core.png");
         }
 
         private static void Render(string scenePath, string fileName)
@@ -45,7 +51,7 @@ namespace SabaExample.Editor
                     fileName);
                 Directory.CreateDirectory(Path.GetDirectoryName(output));
                 File.WriteAllBytes(output, screenshot.EncodeToPNG());
-                Debug.Log("[SabaProps example] Screenshot: " + output);
+                Debug.Log("[SabaExample] Screenshot: " + output);
             }
             finally
             {

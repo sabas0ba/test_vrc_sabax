@@ -20,6 +20,14 @@ namespace SabaExample.Editor
             Material debug = CreateMaterial("Debug", "SabaShader/Debug");
             Material standard = CreateMaterial("Standard", "Standard");
 
+            if (AssetDatabase.LoadAssetAtPath<SceneAsset>(ScenePath) != null)
+            {
+                EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+                AssetDatabase.SaveAssets();
+                Debug.Log("[SabaShader example] Updated materials for " + ScenePath);
+                return;
+            }
+
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             CreateSphere("Standard", -2.5f, standard);
             CreateSphere("Illust2D", 0f, illust);
@@ -57,6 +65,23 @@ namespace SabaExample.Editor
                 material.shader = shader;
                 EditorUtility.SetDirty(material);
             }
+
+            Color baseColor = new Color(0.45f, 0.78f, 0.85f, 1f);
+            if (name == "Standard")
+            {
+                material.SetColor("_Color", baseColor);
+            }
+            else if (name == "Illust2D")
+            {
+                if (!material.HasProperty("_BaseColor"))
+                    throw new InvalidOperationException("Illust2D has no _BaseColor");
+                material.SetColor("_BaseColor", baseColor);
+                material.SetColor("_Shade1Color", new Color(0.8f, 0.82f, 1f, 1f));
+                material.SetColor("_Shade2Color", new Color(0.52f, 0.62f, 0.95f, 1f));
+                material.SetFloat("_ShadeBlur1", 0.02f);
+                material.SetFloat("_ShadeBlur2", 0.02f);
+            }
+            EditorUtility.SetDirty(material);
 
             Debug.Log("[SabaShader example] " + shaderName + ": supported=" + shader.isSupported);
             return material;

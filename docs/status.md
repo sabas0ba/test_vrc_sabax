@@ -15,7 +15,7 @@ title: 対象一覧
 | 1 | SabaProps Soft Props | 0.2.0 | world／PC | デモ読込済み |
 | 1 | SabaProps Water | 公開リスティングに無し | Worlds | 未実施 |
 | 1 | SabaProps Stage Cam | 公開リスティングに無し | Worlds | 未実施 |
-| 2 | SabaShader | 0.5.0（Shader Core 0.1.12） | world／avatar | 比較シーン生成済み |
+| 2 | SabaShader | 0.5.0（Shader Core 0.1.12） | world／avatar | 比較シーン生成・Editor 描画確認済み |
 | 3 | SabaTools Inspect Core | 0.1.0 | world／avatar | 6件のレポート生成済み |
 | 3 | SabaTools Inspect for Avatars | 0.2.0 | avatar | 公式サンプルを検査済み |
 | 3 | SabaTools Inspect for Worlds | 0.1.0 | world | 3シーンを検査済み |
