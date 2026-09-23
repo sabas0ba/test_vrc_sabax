@@ -14,8 +14,8 @@ title: SabaTools の利用例
 
 `Scan Active Scene` も別ケースとして確認します。GPU メモリは推定値であり、実測値との不一致だけを不具合と判断しません。操作の詳細は [Inspect Core](https://github.com/sabas0ba/vrc_sabatools/blob/main/Packages/io.github.sabas0ba.sabatools.core/README.md) を参照してください。
 
-2026-09-23、Unity 2022.3.22f1 で公開 API `InspectApi.InspectScene` を実行し、[Trees](reports/trees.md)、[Put Items](reports/putitems.md)、[Soft Props](reports/softprops.md)、[SabaShader](reports/sabashader.md)、[Digital Halo](reports/digital-halo.md)、[VRChat 公式 Robot Avatar](reports/vrchat-robot-avatar.md) の6レポートを生成しました。Robot Avatar は Avatar モード、Trees／Put Items／Soft Props は World モードで検査しました。Trees 以外は0エラー・0警告です。
+2026-09-23、Unity 2022.3.22f1 で公開 API `InspectApi.InspectScene` を実行し、[Trees](reports/trees.html)、[Put Items](reports/putitems.html)、[Soft Props](reports/softprops.html)、[SabaShader](reports/sabashader.html)、[Digital Halo](reports/digital-halo.html)、[VRChat 公式 Robot Avatar](reports/vrchat-robot-avatar.html) の6レポートを生成しました。Robot Avatar は Avatar モード、Trees／Put Items／Soft Props は World モードで検査しました。Trees 以外は0エラー・0警告です。
 
 `scripts/run-unity-examples.ps1 -VerifyReadOnly` で検査前後の6シーンファイルの SHA-256 を比較し、全て不変でした。これは保存済みシーンファイルが書き換わらないことの確認であり、Editor の一時的なメモリ状態まで保証するものではありません。
 
-再生成時、Robot Avatar レポートでは同じ推定サイズのテクスチャ2件の行順だけが変わりました。集計値は不変です。[観察記録](observations.md#sabatools-同じサイズのテクスチャ行順が変わる)と[上流 Issue](https://github.com/sabas0ba/vrc_sabatools/issues/4)を参照してください。
+再生成時、Robot Avatar レポートでは同じ推定サイズのテクスチャ2件の行順だけが変わりました。集計値は不変です。[観察記録](observations.html#sabatools-同じサイズのテクスチャ行順が変わる)と[上流 Issue](https://github.com/sabas0ba/vrc_sabatools/issues/4)を参照してください。

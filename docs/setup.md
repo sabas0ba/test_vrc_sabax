@@ -21,7 +21,7 @@ SabaShader を導入する前に Shader Core のリスティングも追加し�
 
 Trees 0.1.0 は Foliage 0.4.0 を要求し、`vrc-get` は Foliage 0.6.0 との競合を報告します。このため、`projects/world/` では Trees と Foliage 0.4.0、`projects/foliage/` では Foliage 0.6.0 を検証します。`projects/avatar/` には Avatar SDK、SabaShader、SabaTools Avatar、SabaAccessory を導入します。
 
-`Packages/manifest.json`、`Packages/vpm-manifest.json`、`Packages/packages-lock.json`、`ProjectSettings/`、自作の検証用 `Assets/` を管理対象とし、VPM が展開したパッケージ本体、配布デモからインポートしたアセット、SDK／UdonSharp が生成したアセット、`Library/` 等は除外します。各パッケージの固定版は [対象一覧](status.md) に記録します。
+`Packages/manifest.json`、`Packages/vpm-manifest.json`、`Packages/packages-lock.json`、`ProjectSettings/`、自作の検証用 `Assets/` を管理対象とし、VPM が展開したパッケージ本体、配布デモからインポートしたアセット、SDK／UdonSharp が生成したアセット、`Library/` 等は除外します。各パッケージの固定版は [対象一覧](status.html) に記録します。
 
 ## 開発用ツール
 
@@ -51,7 +51,7 @@ bash scripts/check-vpm-hashes.sh
 powershell -NoProfile -File scripts/run-unity-examples.ps1
 ```
 
-このスクリプトは 2026-09-23 に通しで正常終了しました。隔離環境からホスト Unity を起動すると、ライセンスが有効でも LicensingClient の IPC 接続が拒否され、終了コード199になる場合があります。この環境では Unity バッチ処理を隔離外のホスト側で実行します。[観察記録](observations.md#隔離環境からの-unity-licensingclient-ipc-接続失敗)を参照してください。
+このスクリプトは 2026-09-23 に通しで正常終了しました。隔離環境からホスト Unity を起動すると、ライセンスが有効でも LicensingClient の IPC 接続が拒否され、終了コード199になる場合があります。この環境では Unity バッチ処理を隔離外のホスト側で実行します。[観察記録](observations.html#隔離環境からの-unity-licensingclient-ipc-接続失敗)を参照してください。
 
 Foliage、Trees、Put Items、Soft Props、SabaShader、Digital Halo の掲載画像も再生成する場合は、グラフィック出力が使えるホスト Unity で `-RenderImages` を指定します。
 

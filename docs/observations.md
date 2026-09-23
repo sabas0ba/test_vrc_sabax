@@ -12,13 +12,13 @@ title: 観察記録
 - 種別: ドキュメントの不整合
 - 上流報告: [sabas0ba/vrc_sabaprops#21](https://github.com/sabas0ba/vrc_sabaprops/issues/21)
 
-[ルート README](https://github.com/sabas0ba/vrc_sabaprops/blob/2f9a39a4020f76b5b800c5280b1f8951784add4c/README.md) は `Tools > SabaProps > Foliage > Create Sample Scene` を案内しています。一方、[FoliageSampleScene.cs](https://github.com/sabas0ba/vrc_sabaprops/blob/2f9a39a4020f76b5b800c5280b1f8951784add4c/Packages/io.github.sabas0ba.sabaprops.foliage/Editor/FoliageSampleScene.cs) の `MenuItem` は `Tools/SabaProps/Debug/Foliage/Create Sample Scene` です。このリポジトリの[利用手順](sabaprops.md)にはコード上のメニュー名を記載しました。
+[ルート README](https://github.com/sabas0ba/vrc_sabaprops/blob/2f9a39a4020f76b5b800c5280b1f8951784add4c/README.md) は `Tools > SabaProps > Foliage > Create Sample Scene` を案内しています。一方、[FoliageSampleScene.cs](https://github.com/sabas0ba/vrc_sabaprops/blob/2f9a39a4020f76b5b800c5280b1f8951784add4c/Packages/io.github.sabas0ba.sabaprops.foliage/Editor/FoliageSampleScene.cs) の `MenuItem` は `Tools/SabaProps/Debug/Foliage/Create Sample Scene` です。このリポジトリの[利用手順](sabaprops.html)にはコード上のメニュー名を記載しました。
 
 Foliage 0.6.0 を Unity 2022.3.22f1 に導入し、対応する `FoliageSampleScene.CreateAndOpen` を実行してシーン生成を確認しました。メニューの GUI 表示自体は未確認です。
 
 ## 公開リスティングに含まれない機能
 
-[対象一覧](status.md)に記載した Water、Stage Cam、Avatar Material Studio は、ソースリポジトリの説明に存在しますが、確認日の公開 VPM リスティングに含まれません。リリース状況として記録し、仕様上の公開範囲かどうかは未判定です。
+[対象一覧](status.html)に記載した Water、Stage Cam、Avatar Material Studio は、ソースリポジトリの説明に存在しますが、確認日の公開 VPM リスティングに含まれません。リリース状況として記録し、仕様上の公開範囲かどうかは未判定です。
 
 ## Trees 0.1.0 が Foliage 0.4.0 を要求する
 

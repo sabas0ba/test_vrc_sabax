@@ -24,15 +24,15 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 導入版と公開アーカイブのハッシュの対応は、[VPM ハッシュ検査](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/check-vpm-hashes.sh)で確認できます。
 
 - Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
-- Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。[Inspect レポート](reports/trees.md)には `VRCSceneDescriptor` がないという1件の警告が記録されています。アップロードする場合は World 設定を追加する必要があります。
-- Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.md)は0エラー・0警告です。
-- Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.md)は0エラー・0警告です。
+- Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。[Inspect レポート](reports/trees.html)には `VRCSceneDescriptor` がないという1件の警告が記録されています。アップロードする場合は World 設定を追加する必要があります。
+- Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.html)は0エラー・0警告です。
+- Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.html)は0エラー・0警告です。
 
-VRChat クライアントでの Pickup 同期と Contact 変形は未確認です。Trees と Foliage の公開版依存関係については [観察記録](observations.md) を参照してください。
+VRChat クライアントでの Pickup 同期と Contact 変形は未確認です。Trees と Foliage の公開版依存関係については [観察記録](observations.html) を参照してください。
 
 ## Editor 描画例
 
-以下は Unity 2022.3.22f1 の配布デモシーンを、そのシーンの Main Camera から出力した画像です。元のシーンは [SabaProps](https://github.com/sabas0ba/vrc_sabaprops) の各パッケージに含まれます。VRChat クライアント内の見た目を示すものではなく、ピクセル単位の一致を検査する画像でもありません。[再生成手順](setup.md#開発用ツール)の `-RenderImages` で更新できます。
+以下は Unity 2022.3.22f1 の配布デモシーンを、そのシーンの Main Camera から出力した画像です。元のシーンは [SabaProps](https://github.com/sabas0ba/vrc_sabaprops) の各パッケージに含まれます。VRChat クライアント内の見た目を示すものではなく、ピクセル単位の一致を検査する画像でもありません。[再生成手順](setup.html#開発用ツール)の `-RenderImages` で更新できます。
 
 Foliage 0.6.0 のサンプルシーン。複数の植物種と配置区画を一つのシーンで確認できます。
 
