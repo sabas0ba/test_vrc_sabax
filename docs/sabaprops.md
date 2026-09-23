@@ -26,6 +26,7 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 - Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
 - Foliage 公式 Package Manager サンプル: `Foliage Demo` を Unity の `Sample.Import` で導入し、`FoliageDemo`、`FoliageSpeciesDemo`、`FoliageLoadDemo` の3シーンを読み込みました。[構成レポート](reports/foliage-package-samples.html)に GameObject、Renderer、編集用 Component の件数を記録しています。植物の個体数や実測描画負荷を示す件数ではありません。
 - Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。Game View 用の World Descriptor を追加しました。[Inspect レポート](reports/trees.html)には Main Camera の near clip 設定について1件の警告が記録されています。
+- Trees 生成: 正規メニューの `Create Default Assets` で12種の Species と各3段階の LOD Mesh を生成しました。1種の再構築では Mesh 参照と GUID が維持され、3段階の LODGroup も作成できました。[頂点数と確認結果](reports/trees-generation.html)を記録しています。生成した検証用シーンは保存していません。
 - Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.html)は0エラー・0警告です。
 - Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.html)は0エラー・0警告です。
 

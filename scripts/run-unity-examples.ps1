@@ -69,6 +69,7 @@ if (-not (Test-Path -LiteralPath $haloScene)) {
 }
 
 Invoke-UnityExample world world-playmode-setup SabaExample.Editor.WorldPlayModeSetup.Prepare
+Invoke-UnityExample world trees-generation SabaExample.Editor.TreesGenerationAudit.GenerateAndInspect
 
 $robotScene = Join-Path $repository 'projects/avatar/Packages/com.vrchat.avatars/Samples/Dynamics/Robot Avatar/Avatar Dynamics Robot Avatar PC.unity'
 $inspectScenes = @($treesScene, $putItemsScene, $softPropsScene, $shaderScene, $haloScene, $robotScene)
