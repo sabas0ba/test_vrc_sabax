@@ -30,4 +30,16 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 
 VRChat クライアントでの Pickup 同期と Contact 変形は未確認です。Trees と Foliage の公開版依存関係については [観察記録](observations.md) を参照してください。
 
+## Editor 描画例
+
+以下は Unity 2022.3.22f1 の配布デモシーンを、そのシーンの Main Camera から出力した画像です。元のシーンは [SabaProps](https://github.com/sabas0ba/vrc_sabaprops) の Foliage／Trees パッケージに含まれます。VRChat クライアント内の見た目を示すものではなく、ピクセル単位の一致を検査する画像でもありません。[再生成手順](setup.md#開発用ツール)の `-RenderImages` で更新できます。
+
+Foliage 0.6.0 のサンプルシーン。複数の植物種と配置区画を一つのシーンで確認できます。
+
+![Foliage サンプルシーンの Unity Editor 描画](images/foliage-demo.png)
+
+Trees 0.1.0 のサンプルシーン。樹種別の群植と生成された樹冠を確認できます。
+
+![Trees サンプルシーンの Unity Editor 描画](images/trees-demo.png)
+
 操作と制約: [Foliage](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.foliage/README.md)、[Trees](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.trees/README.md)、[Put Items](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.putitems/Documentation~/demo-review.md)、[Soft Props](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.softprops/Documentation~/demo-review.md)。

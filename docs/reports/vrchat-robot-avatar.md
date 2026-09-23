@@ -32,8 +32,8 @@ layout: default
 |---|---|
 | Textures | 3 |
 | Estimated GPU Memory | 5.4 MB |
-| Tutorial_Robot_Avatar_Dynamics_Demo_v1_BODY (2048x2048 DXT1Crunched, mips) | 2.7 MB |
 | Tutorial_Robot_Avatar_Dynamics_Demo_v1_BASE (2048x2048 DXT1Crunched, mips) | 2.7 MB |
+| Tutorial_Robot_Avatar_Dynamics_Demo_v1_BODY (2048x2048 DXT1Crunched, mips) | 2.7 MB |
 | puff (256x256 DXT5Crunched) | 64.0 KB |
 ## Dynamics
 

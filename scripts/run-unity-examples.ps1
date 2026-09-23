@@ -1,5 +1,6 @@
 param(
-    [string]$UnityEditor = 'C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe'
+    [string]$UnityEditor = 'C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe',
+    [switch]$RenderImages
 )
 
 $ErrorActionPreference = 'Stop'
@@ -15,12 +16,14 @@ function Invoke-UnityExample {
     param(
         [string]$Project,
         [string]$Name,
-        [string]$Method
+        [string]$Method,
+        [switch]$Graphics
     )
 
     $projectPath = Join-Path $repository "projects/$Project"
     $logPath = Join-Path $logs "unity-$Name.log"
-    $arguments = '-batchmode -nographics -quit -projectPath "{0}" -logFile "{1}" -executeMethod {2}' -f $projectPath, $logPath, $Method
+    $mode = if ($Graphics) { '-batchmode -quit' } else { '-batchmode -nographics -quit' }
+    $arguments = '{0} -projectPath "{1}" -logFile "{2}" -executeMethod {3}' -f $mode, $projectPath, $logPath, $Method
     $process = Start-Process -FilePath $UnityEditor -ArgumentList $arguments -Wait -PassThru -WindowStyle Hidden
     if ($process.ExitCode -ne 0) {
         throw "Unity failed for ${Name} ($($process.ExitCode)). Log: $logPath"
@@ -64,3 +67,8 @@ if (-not (Test-Path -LiteralPath $haloScene)) {
     Invoke-UnityExample avatar digitalhalo-demo SabaAccessory.DigitalHalo.Editor.DigitalHaloDemoInstaller.ImportAndOpenForValidation
 }
 Invoke-UnityExample avatar avatar-audit SabaExample.Editor.AvatarExamplesAudit.Run
+
+if ($RenderImages) {
+    Invoke-UnityExample foliage foliage-screenshot SabaExample.Editor.FoliageScreenshotExporter.Export -Graphics
+    Invoke-UnityExample world trees-screenshot SabaExample.Editor.TreesScreenshotExporter.Export -Graphics
+}
