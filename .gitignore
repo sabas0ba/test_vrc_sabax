@@ -1,0 +1,27 @@
+# Unity の再生成可能なローカルデータ
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+.vs/
+.idea/
+.work/
+projects/*/Packages/*/
+projects/*/Assets/SerializedUdonPrograms*
+projects/*/Assets/UdonSharp*
+projects/world/Assets/SabaProps*
+projects/foliage/Assets/SabaProps*
+projects/avatar/Assets/Samples*
+projects/*/ClientSimStorage/
+projects/*/ProjectSettings/PackageManagerSettings.asset
+*.csproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.unityproj
+.DS_Store
+Thumbs.db

@@ -1,0 +1,80 @@
+{
+  "dependencies": {
+    "com.vrchat.worlds": {
+      "version": "3.10.4"
+    },
+    "io.github.sabas0ba.sabaprops.trees": {
+      "version": "0.1.0"
+    },
+    "io.github.sabas0ba.sabaprops.putitems": {
+      "version": "0.1.1"
+    },
+    "io.github.sabas0ba.sabaprops.softprops": {
+      "version": "0.2.0"
+    },
+    "io.github.sabas0ba.sabashader": {
+      "version": "0.5.0"
+    },
+    "io.github.sabas0ba.sabatools.world": {
+      "version": "0.1.0"
+    },
+    "io.github.sabas0ba.sabaprops.foliage": {
+      "version": "0.4.0"
+    }
+  },
+  "locked": {
+    "com.vrchat.base": {
+      "version": "3.10.4",
+      "dependencies": {}
+    },
+    "com.vrchat.worlds": {
+      "version": "3.10.4",
+      "dependencies": {
+        "com.vrchat.base": "3.10.4"
+      }
+    },
+    "io.github.sabas0ba.sabaprops.trees": {
+      "version": "0.1.0",
+      "dependencies": {
+        "io.github.sabas0ba.sabaprops.foliage": "0.4.0"
+      }
+    },
+    "io.github.sabas0ba.sabaprops.putitems": {
+      "version": "0.1.1",
+      "dependencies": {
+        "com.vrchat.worlds": "3.10.x"
+      }
+    },
+    "io.github.sabas0ba.sabaprops.softprops": {
+      "version": "0.2.0",
+      "dependencies": {
+        "com.vrchat.worlds": "3.10.x"
+      }
+    },
+    "io.github.sabas0ba.sabashader": {
+      "version": "0.5.0",
+      "dependencies": {
+        "jp.lilxyzw.shadercore": ">=0.1.9"
+      }
+    },
+    "jp.lilxyzw.shadercore": {
+      "version": "0.1.12",
+      "dependencies": {}
+    },
+    "io.github.sabas0ba.sabatools.world": {
+      "version": "0.1.0",
+      "dependencies": {
+        "com.vrchat.worlds": ">=3.10.4",
+        "io.github.sabas0ba.sabatools.core": ">=0.1.0"
+      }
+    },
+    "io.github.sabas0ba.sabatools.core": {
+      "version": "0.1.0",
+      "dependencies": {}
+    },
+    "io.github.sabas0ba.sabaprops.foliage": {
+      "version": "0.4.0",
+      "dependencies": {}
+    }
+  }
+}
