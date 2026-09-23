@@ -53,6 +53,8 @@ powershell -NoProfile -File scripts/run-unity-examples.ps1
 
 このスクリプトは 2026-09-23 に通しで正常終了しました。隔離環境からホスト Unity を起動すると、ライセンスが有効でも LicensingClient の IPC 接続が拒否され、終了コード199になる場合があります。この環境では Unity バッチ処理を隔離外のホスト側で実行します。[観察記録](observations.html#隔離環境からの-unity-licensingclient-ipc-接続失敗)を参照してください。
 
+`projects/world/` の対話的な ClientSim 検証では、Unity の Active Input Handling を「Both」に設定します。VRChat SDK 同梱の ClientSim Settings は旧 Input Manager と新 Input System の両方が必要と案内しており、設定変更後は Unity の再起動が必要です。この設定と SDK が更新した描画・品質・XR のプロジェクト設定を Git 管理し、`ClientSimStorage/` に保存されるローカル操作データは除外します。
+
 Foliage、Trees、Put Items、Soft Props、SabaShader、Digital Halo の掲載画像も再生成する場合は、グラフィック出力が使えるホスト Unity で `-RenderImages` を指定します。
 
 ```powershell
