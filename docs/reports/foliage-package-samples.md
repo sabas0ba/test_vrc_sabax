@@ -14,4 +14,3 @@ Unity 2022.3.22f1、SabaProps Foliage 0.6.0。`Sample.FindByPackage` と `Sample
 | FoliageLoadDemo.unity | 74 | 69 | 0 | 0 | 0 |
 
 MeshRenderer 数は描画コンポーネント数であり、植物の個体数ではありません。Merged Chunks では複数個体を一つの Renderer にまとめます。
-

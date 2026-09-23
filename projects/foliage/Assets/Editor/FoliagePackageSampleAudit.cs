@@ -66,7 +66,8 @@ namespace SabaExample.Editor
                 Debug.Log($"[SabaProps Foliage sample] {name}: {renderers} renderers");
             }
 
-            report.AppendLine("\nMeshRenderer 数は描画コンポーネント数であり、植物の個体数ではありません。Merged Chunks では複数個体を一つの Renderer にまとめます。\n");
+            report.AppendLine();
+            report.AppendLine("MeshRenderer 数は描画コンポーネント数であり、植物の個体数ではありません。Merged Chunks では複数個体を一つの Renderer にまとめます。");
 
             string repository = Path.GetFullPath(Path.Combine(Application.dataPath, "../../.."));
             string output = Path.Combine(repository, "docs", "reports", "foliage-package-samples.md");
