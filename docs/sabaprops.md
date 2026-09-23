@@ -37,7 +37,9 @@ VRChat クライアントでの Pickup 同期と Contact 変形は未確認で�
 3. `Assets/SabaProps/PutItemsKitchenDemoV2/PutItemsKitchen.unity` または `Assets/SabaProps/SoftPropsDemoMotion/SoftPropsDemo.unity` を開き、ClientSim が有効であることを確認して Play を押します。Game View で Pickup の配置や家具との接触を操作し、Console のエラーと結果を記録します。
 4. Trees は `Assets/SabaProps/TreesBundledDemo/TreesDemo.unity` を開き、スポーン位置と樹木の見え方を確認します。配布デモの Main Camera の near clip は 0.300 のままです。
 
-無人バッチの Play Mode では ClientSim の起動までは確認できましたが、入力取得の `NullReferenceException` が連続したため、Game View の操作結果として扱いません。対話的な Game View 操作は未確認です。[観察記録](observations.html#無人バッチ-play-mode-での-clientsim-入力例外)を参照してください。
+2026-09-23、利用者から Put Items シーンの対話的な Play Mode 操作は概ね期待どおりとの報告がありました。具体的な操作項目と Console の結果は未記録のため、Pickup 配置補正の詳細や同期の合格判定には用いません。Soft Props の対話的な操作結果も未記録です。
+
+無人バッチの Play Mode では ClientSim の起動までは確認できましたが、入力取得の `NullReferenceException` が連続したため、対話的な Game View の結果と混同しません。[観察記録](observations.html#無人バッチ-play-mode-での-clientsim-入力例外)を参照してください。
 
 ## Editor 描画例
 

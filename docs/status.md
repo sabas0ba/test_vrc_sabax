@@ -11,7 +11,7 @@ title: 対象一覧
 | --- | --- | --- | --- | --- |
 | 1 | SabaProps Foliage | 0.6.0／Trees 依存では 0.4.0 | foliage／world | サンプル生成済み |
 | 1 | SabaProps Trees | 0.1.0 | world | 3シーン生成済み |
-| 1 | SabaProps Put Items | 0.1.1 | world | デモ読込済み |
+| 1 | SabaProps Put Items | 0.1.1 | world | デモ読込済み。対話的 Play Mode 操作は概ね期待どおりとの利用者報告あり |
 | 1 | SabaProps Soft Props | 0.2.0 | world／PC | デモ読込済み |
 | 1 | SabaProps Water | 公開リスティングに無し | Worlds | 未実施 |
 | 1 | SabaProps Stage Cam | 公開リスティングに無し | Worlds | 未実施 |
