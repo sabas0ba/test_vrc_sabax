@@ -47,6 +47,7 @@ $treesScene = Join-Path $repository 'projects/world/Assets/SabaProps/TreesBundle
 if (-not (Test-Path -LiteralPath $treesScene)) {
     Invoke-UnityExample world trees-demo SabaProps.Trees.Editors.TreeBundledDemo.CreateAndOpen
 }
+Invoke-UnityExample world trees-package-samples SabaExample.Editor.TreesPackageSampleAudit.ImportAndInspect
 
 $putItemsScene = Join-Path $repository 'projects/world/Assets/SabaProps/PutItemsKitchenDemoV2/PutItemsKitchen.unity'
 if (-not (Test-Path -LiteralPath $putItemsScene)) {
@@ -103,6 +104,7 @@ if ($RenderImages) {
     Invoke-UnityExample foliage foliage-screenshot SabaExample.Editor.FoliageScreenshotExporter.Export -Graphics
     Invoke-UnityExample foliage foliage-package-screenshot SabaExample.Editor.FoliageScreenshotExporter.ExportPackageSample -Graphics
     Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldExampleScreenshotExporter.ExportProps -Graphics
+    Invoke-UnityExample world trees-package-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportTreesPackageSample -Graphics
     Invoke-UnityExample world sabashader-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShader -Graphics
     Invoke-UnityExample world sabashader-debug-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShaderDebugSample -Graphics
     Invoke-UnityExample world sabashader-advanced-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShaderAdvancedSample -Graphics

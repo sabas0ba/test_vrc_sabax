@@ -35,6 +35,12 @@ namespace SabaExample.Editor
                 "sabashader-advanced-suite.png");
         }
 
+        public static void ExportTreesPackageSample()
+        {
+            Render("Assets/Samples/SabaProps Trees/0.1.0/Trees Demo/TreesDemo.unity",
+                "trees-package-sample.png");
+        }
+
         private static void Render(string scenePath, string fileName)
         {
             EditorSceneManager.OpenScene(scenePath);

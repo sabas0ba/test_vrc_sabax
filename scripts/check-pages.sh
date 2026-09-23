@@ -16,6 +16,7 @@ paths=(
   /reporting.html
   /reports/trees.html
   /reports/trees-generation.html
+  /reports/trees-package-samples.html
   /reports/foliage-package-samples.html
   /reports/putitems.html
   /reports/softprops.html
@@ -29,6 +30,7 @@ paths=(
   /images/foliage-demo.png
   /images/foliage-species-demo.png
   /images/trees-demo.png
+  /images/trees-package-sample.png
   /images/putitems-demo.png
   /images/softprops-demo.png
   /images/sabashader-core.png

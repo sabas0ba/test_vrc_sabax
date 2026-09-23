@@ -26,6 +26,7 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 - Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
 - Foliage 公式 Package Manager サンプル: `Foliage Demo` を Unity の `Sample.Import` で導入し、`FoliageDemo`、`FoliageSpeciesDemo`、`FoliageLoadDemo` の3シーンを読み込みました。[構成レポート](reports/foliage-package-samples.html)に GameObject、Renderer、編集用 Component の件数を記録しています。植物の個体数や実測描画負荷を示す件数ではありません。
 - Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。Game View 用の World Descriptor を追加しました。[Inspect レポート](reports/trees.html)には Main Camera の near clip 設定について1件の警告が記録されています。
+- Trees 公式 Package Manager サンプル: `Trees Demo` を `Sample.Import` で導入し、混交林、季節、負荷比較の3シーンを読み込みました。45／37／192件の LODGroup がすべて3段階であることを[構成レポート](reports/trees-package-samples.html)に記録しています。負荷比較シーンの579 MeshRenderer には樹木以外の3件も含まれます。
 - Trees 生成: 正規メニューの `Create Default Assets` で12種の Species と各3段階の LOD Mesh を生成しました。1種の再構築では Mesh 参照と GUID が維持され、3段階の LODGroup も作成できました。[頂点数と確認結果](reports/trees-generation.html)を記録しています。生成した検証用シーンは保存していません。
 - Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.html)は0エラー・0警告です。
 - Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.html)は0エラー・0警告です。
@@ -47,6 +48,10 @@ VRChat クライアントでの Pickup 同期と Contact 変形は未確認で�
 ## Editor 描画例
 
 以下は Unity 2022.3.22f1 の配布デモシーンを、そのシーンの Main Camera から出力した画像です。元のシーンは [SabaProps](https://github.com/sabas0ba/vrc_sabaprops) の各パッケージに含まれます。VRChat クライアント内の見た目を示すものではなく、ピクセル単位の一致を検査する画像でもありません。[再生成手順](setup.html#開発用ツール)の `-RenderImages` で更新できます。
+
+Trees 0.1.0 の公式 Package Manager サンプル `TreesDemo` の Unity Editor 描画です。
+
+![Trees 公式 Package Manager サンプルの混交林と街路樹](images/trees-package-sample.png)
 
 Foliage 0.6.0 のサンプルシーン。複数の植物種と配置区画を一つのシーンで確認できます。
 
