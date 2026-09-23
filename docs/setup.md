@@ -33,6 +33,12 @@ nix shell github:NixOS/nixpkgs/597283ad8aa0b331c788e97c4c262d58877074ef#vrc-get 
 
 このコマンドは dotfiles の開発シェルまたは同じ flake のコンテナ内で、作業ツリーを `/project` に配置して実行します。パッケージ本体は `vrc-get` が VPM リスティングから解決します。
 
+クリーン clone に対して同じコマンドを実行し、Worlds 10件、Avatars 7件、Foliage 3件のロック済みパッケージが復元され、Git 管理対象の manifest に変更が出ないことを確認しました。再現時は [lock 照合スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/check-vpm-locks.sh)を Nix 環境で実行します。
+
+```sh
+bash scripts/check-vpm-locks.sh
+```
+
 SabaProps の使用版は、公開リスティングが示す `zipSHA256` も [固定値](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/props-vpm-sha256.tsv)として記録しています。次の検査は現行リスティングのハッシュと各プロジェクトの VPM lock を照合します。同じ版のアーカイブが差し替わった場合は失敗します。これはアーカイブを再ダウンロードして照合する検査ではありません。
 
 ```sh
