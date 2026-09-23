@@ -19,6 +19,7 @@ paths=(
   /reports/foliage-package-samples.html
   /reports/putitems.html
   /reports/softprops.html
+  /reports/softprops-generator.html
   /reports/sabashader.html
   /reports/sabashader-debug-sample.html
   /reports/sabashader-advanced-sample.html

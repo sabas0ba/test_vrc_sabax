@@ -12,7 +12,7 @@ title: 対象一覧
 | 1 | SabaProps Foliage | 0.6.0／Trees 依存では 0.4.0 | foliage／world | サンプル生成・公式 Package Manager サンプル3シーン読込済み |
 | 1 | SabaProps Trees | 0.1.0 | world | 3シーン、12種×3 LOD Mesh 生成・LODGroup 検査済み |
 | 1 | SabaProps Put Items | 0.1.1 | world | デモ読込済み。対話的 Play Mode 操作は概ね期待どおりとの利用者報告あり |
-| 1 | SabaProps Soft Props | 0.2.0 | world／PC | デモ読込済み |
+| 1 | SabaProps Soft Props | 0.2.0 | world／PC | デモ読込・公式 Generator の5 Prefab 構成検査済み |
 | 1 | SabaProps Water | 公開リスティングに無し | Worlds | 未実施 |
 | 1 | SabaProps Stage Cam | 公開リスティングに無し | Worlds | 未実施 |
 | 2 | SabaShader | 0.5.0（Shader Core 0.1.12） | world／avatar | 比較シーン、公式 Debug 18モード、Advanced 11項目を Editor で検査済み |

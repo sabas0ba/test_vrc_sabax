@@ -29,6 +29,7 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 - Trees 生成: 正規メニューの `Create Default Assets` で12種の Species と各3段階の LOD Mesh を生成しました。1種の再構築では Mesh 参照と GUID が維持され、3段階の LODGroup も作成できました。[頂点数と確認結果](reports/trees-generation.html)を記録しています。生成した検証用シーンは保存していません。
 - Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.html)は0エラー・0警告です。
 - Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.html)は0エラー・0警告です。
+- Soft Props Generator: 正規メニューと同じ公開 `GenerateAll` API で Futon、Bed、Sofa、Cushion、ContactProbeTest の5 Prefab を生成しました。各 Prefab の変形面、Mesh、Material と、未保存シーンへの Showcase／Contact Probe 配置を[検査レポート](reports/softprops-generator.html)に記録しています。接触後の変形・復元は未検証です。
 
 VRChat クライアントでの Pickup 同期と Contact 変形は未確認です。Trees と Foliage の公開版依存関係については [観察記録](observations.html) を参照してください。
 

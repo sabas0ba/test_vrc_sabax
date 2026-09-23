@@ -57,6 +57,7 @@ $softPropsScene = Join-Path $repository 'projects/world/Assets/SabaProps/SoftPro
 if (-not (Test-Path -LiteralPath $softPropsScene)) {
     Invoke-UnityExample world softprops-demo SabaProps.SoftProps.Editors.SoftPropsDemo.OpenDemo
 }
+Invoke-UnityExample world softprops-generator SabaExample.Editor.SoftPropsGeneratorAudit.GenerateAndInspect
 
 $shaderScene = Join-Path $repository 'projects/world/Assets/Examples/SabaShader/CoreShaders.unity'
 if (-not (Test-Path -LiteralPath $shaderScene)) {
