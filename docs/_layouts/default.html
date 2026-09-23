@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "test_vrc_sabax" | escape }}</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.6; }
+    body { max-width: 70rem; margin: auto; padding: 1rem 1.5rem 3rem; }
+    nav { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding-bottom: 1rem; border-bottom: 1px solid #8888; }
+    main { overflow-wrap: anywhere; }
+    table { border-collapse: collapse; display: block; max-width: 100%; overflow-x: auto; }
+    th, td { border: 1px solid #8888; padding: .3rem .6rem; text-align: left; }
+    pre { overflow-x: auto; padding: .8rem; background: #8882; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <nav aria-label="主要ページ">
+    <a href="{{ '/' | relative_url }}">概要</a>
+    <a href="{{ '/setup.html' | relative_url }}">セットアップ</a>
+    <a href="{{ '/status.html' | relative_url }}">対象一覧</a>
+    <a href="{{ '/sabaprops.html' | relative_url }}">SabaProps</a>
+    <a href="{{ '/sabashader.html' | relative_url }}">SabaShader</a>
+    <a href="{{ '/sabatools.html' | relative_url }}">SabaTools</a>
+    <a href="{{ '/sabaaccessory.html' | relative_url }}">SabaAccessory</a>
+  </nav>
+  <main>{{ content }}</main>
+</body>
+</html>

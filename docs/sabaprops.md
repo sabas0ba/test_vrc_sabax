@@ -1,0 +1,31 @@
+---
+layout: default
+title: SabaProps の利用例
+---
+
+# SabaProps の利用例
+
+配布元の [導入手順](https://github.com/sabas0ba/vrc_sabaprops#vcc-への追加)に従い、ALCOM の `vrc-get` で公開版を導入しました。Foliage 0.6.0 は `projects/foliage/`、Trees 0.1.0、Put Items、Soft Props は `projects/world/` で確認します。Trees は Foliage 0.4.0 を要求するため、二つの Worlds プロジェクトを分けています。
+
+| ケース | 正規の操作 | 確認する結果 |
+| --- | --- | --- |
+| Foliage Demo | Package Manager で Foliage の `Foliage Demo` Sample を Import。または `Tools > SabaProps > Debug > Foliage > Create Sample Scene` | シーンが開き、草木、共有マテリアル、配置モードを確認できる |
+| Trees Demo | Package Manager で Trees の `Trees Demo` Sample を Import | 3 シーンを開き、LOD 切替と樹種の違いを確認できる |
+| Trees 生成 | `Tools > SabaProps > Trees > Create Default Assets` → Species の `Rebuild LOD Meshes` → `Create LOD Group in Scene` | Mesh と LODGroup が生成される |
+| Put Items | `Tools > SabaProps > Put Items > Open Demo Scene` | Pickup を机・壁へ置いたときの補正と同期を確認できる |
+| Soft Props | `Tools > SabaProps > Soft Props > Open Demo Scene` | 家具への接触と復元を PC ワールドの実行時に確認できる |
+
+Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Props のワールド内挙動は VRChat のテスト実行で評価します。シーンの Play Mode だけで VRChat 固有の同期や Contacts の結果を確定しません。
+
+## Unity Editor での結果
+
+2026-09-23、Unity 2022.3.22f1 で Foliage 0.6.0 の生成シーン、Trees 0.1.0 の3シーン、Put Items 0.1.1 と Soft Props 0.2.0 の配布デモを開けました。各バッチ実行で C# コンパイルエラーは0件でした。
+
+- Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
+- Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。[Inspect レポート](reports/trees.md)には `VRCSceneDescriptor` がないという1件の警告が記録されています。アップロードする場合は World 設定を追加する必要があります。
+- Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.md)は0エラー・0警告です。
+- Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.md)は0エラー・0警告です。
+
+VRChat クライアントでの Pickup 同期と Contact 変形は未確認です。Trees と Foliage の公開版依存関係については [観察記録](observations.md) を参照してください。
+
+操作と制約: [Foliage](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.foliage/README.md)、[Trees](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.trees/README.md)、[Put Items](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.putitems/Documentation~/demo-review.md)、[Soft Props](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.softprops/Documentation~/demo-review.md)。
