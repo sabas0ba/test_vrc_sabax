@@ -5,15 +5,24 @@ using UnityEngine;
 
 namespace SabaExample.Editor
 {
-    public static class TreesScreenshotExporter
+    public static class WorldPropsScreenshotExporter
     {
         public static void Export()
         {
-            EditorSceneManager.OpenScene(
-                "Assets/SabaProps/TreesBundledDemo/TreesDemo.unity");
+            Render("Assets/SabaProps/TreesBundledDemo/TreesDemo.unity",
+                "trees-demo.png");
+            Render("Assets/SabaProps/PutItemsKitchenDemoV2/PutItemsKitchen.unity",
+                "putitems-demo.png");
+            Render("Assets/SabaProps/SoftPropsDemoMotion/SoftPropsDemo.unity",
+                "softprops-demo.png");
+        }
+
+        private static void Render(string scenePath, string fileName)
+        {
+            EditorSceneManager.OpenScene(scenePath);
             Camera camera = Camera.main;
             if (camera == null)
-                throw new InvalidOperationException("Trees demo has no MainCamera");
+                throw new InvalidOperationException(scenePath + " has no MainCamera");
 
             const int width = 1280;
             const int height = 720;
@@ -33,7 +42,7 @@ namespace SabaExample.Editor
                 string repository = Path.GetFullPath(
                     Path.Combine(Application.dataPath, "../../.."));
                 string output = Path.Combine(repository, "docs", "images",
-                    "trees-demo.png");
+                    fileName);
                 Directory.CreateDirectory(Path.GetDirectoryName(output));
                 File.WriteAllBytes(output, screenshot.EncodeToPNG());
                 Debug.Log("[SabaProps example] Screenshot: " + output);

@@ -70,5 +70,5 @@ Invoke-UnityExample avatar avatar-audit SabaExample.Editor.AvatarExamplesAudit.R
 
 if ($RenderImages) {
     Invoke-UnityExample foliage foliage-screenshot SabaExample.Editor.FoliageScreenshotExporter.Export -Graphics
-    Invoke-UnityExample world trees-screenshot SabaExample.Editor.TreesScreenshotExporter.Export -Graphics
+    Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldPropsScreenshotExporter.Export -Graphics
 }

@@ -32,7 +32,7 @@ VRChat クライアントでの Pickup 同期と Contact 変形は未確認で�
 
 ## Editor 描画例
 
-以下は Unity 2022.3.22f1 の配布デモシーンを、そのシーンの Main Camera から出力した画像です。元のシーンは [SabaProps](https://github.com/sabas0ba/vrc_sabaprops) の Foliage／Trees パッケージに含まれます。VRChat クライアント内の見た目を示すものではなく、ピクセル単位の一致を検査する画像でもありません。[再生成手順](setup.md#開発用ツール)の `-RenderImages` で更新できます。
+以下は Unity 2022.3.22f1 の配布デモシーンを、そのシーンの Main Camera から出力した画像です。元のシーンは [SabaProps](https://github.com/sabas0ba/vrc_sabaprops) の各パッケージに含まれます。VRChat クライアント内の見た目を示すものではなく、ピクセル単位の一致を検査する画像でもありません。[再生成手順](setup.md#開発用ツール)の `-RenderImages` で更新できます。
 
 Foliage 0.6.0 のサンプルシーン。複数の植物種と配置区画を一つのシーンで確認できます。
 
@@ -41,5 +41,13 @@ Foliage 0.6.0 のサンプルシーン。複数の植物種と配置区画を一
 Trees 0.1.0 のサンプルシーン。樹種別の群植と生成された樹冠を確認できます。
 
 ![Trees サンプルシーンの Unity Editor 描画](images/trees-demo.png)
+
+Put Items 0.1.1 のキッチンデモ。テーブル、トレー、冷蔵庫への配置ケースを含みます。配置補正や同期の動作結果はこの静止画からは判断しません。
+
+![Put Items キッチンデモの Unity Editor 描画](images/putitems-demo.png)
+
+Soft Props 0.2.0 の接触デモ。複数の硬さと復元設定を並べた構成です。接触時の変形は VRChat クライアントで未確認です。
+
+![Soft Props 接触デモの Unity Editor 描画](images/softprops-demo.png)
 
 操作と制約: [Foliage](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.foliage/README.md)、[Trees](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.trees/README.md)、[Put Items](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.putitems/Documentation~/demo-review.md)、[Soft Props](https://github.com/sabas0ba/vrc_sabaprops/blob/main/Packages/io.github.sabas0ba.sabaprops.softprops/Documentation~/demo-review.md)。
