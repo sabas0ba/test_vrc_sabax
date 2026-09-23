@@ -31,6 +31,15 @@ Trees 0.1.0 の公開パッケージは Foliage `0.4.0` を依存として指定
 
 公開版を改変せず検証するため、Trees を含む `projects/world/` と Foliage 0.6.0 の `projects/foliage/` を分けました。両プロジェクトで Unity Editor によるシーン生成を確認しています。
 
-## Unity ライセンス接続による再検証の停止
+## SabaTools: 同じサイズのテクスチャ行順が変わる
 
-2026-09-23 の初回バッチ実行では、3プロジェクトでシーン生成・検査レポートの出力に成功しました。同日、再実行スクリプトの動作確認時にホストの Unity LicensingClient 接続が2回連続で60秒タイムアウトし、Unity は終了コード199を返しました。これはスクリプトの最初の Unity 起動時点で発生し、パッケージ処理に到達していません。ライセンス接続が回復した環境で `scripts/run-unity-examples.ps1` の通し再実行が必要です。
+- 確認日: 2026-09-23
+- 対象: SabaTools Inspect Core 0.1.0、VRChat 公式 Robot Avatar PC シーン
+- 種別: レポート表示順の非決定性。集計値への影響なし
+- 上流報告: [sabas0ba/vrc_sabatools#4](https://github.com/sabas0ba/vrc_sabatools/issues/4)
+
+同じシーンを再検査すると、推定 GPU メモリがともに 2.7 MB の `BASE` と `BODY` のテクスチャ行が入れ替わりました。レポートの3件・推定合計5.4 MB・0エラー・0警告は変わりません。公開版の `TextureUsageCollector` は推定バイト数だけでソートしており、同値の二次キーを指定していません。再実行した2回は `BODY`、`BASE` の順で安定していましたが、初回出力とは異なります。検査結果の意味が変わったとは扱わず、Git 差分のノイズとして記録します。
+
+## 隔離環境からの Unity LicensingClient IPC 接続失敗
+
+2026-09-23、隔離された実行環境からホスト Unity をバッチ起動すると、LicensingClient の IPC チャネル接続が60秒でタイムアウトし、終了コード199を返しました。Unity Hub 上のアカウントとライセンスは有効です。同じ Unity 2022.3.22f1 とプロジェクトを隔離外で起動すると終了コード0で正常終了し、`scripts/run-unity-examples.ps1` も通しで成功しました。したがってパッケージの不具合ではなく、この作業環境のプロセス隔離と LicensingClient IPC の組合せによる制約です。Unity Editor のみ、IPC にアクセスできるホスト環境で実行します。
