@@ -17,3 +17,5 @@ title: test_vrc_sabax
 8. [観察記録](observations.html)
 
 この `docs/` は [GitHub Actions workflow](https://github.com/sabas0ba/test_vrc_sabax/blob/main/.github/workflows/pages.yml) で Jekyll ビルドします。Pull Request ではビルドのみを実行し、`main` への反映後に Pages へデプロイします。公開先は [GitHub Pages](https://sabas0ba.github.io/test_vrc_sabax/) です。
+
+2026-09-23 の `main` 反映後、トップ、各機能ページ、レポート、掲載画像の計21パスが HTTP 200 を返すことを確認しました。公開状態は [検査スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/check-pages.sh)で再確認できます。
