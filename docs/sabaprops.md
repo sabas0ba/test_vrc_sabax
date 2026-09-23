@@ -24,6 +24,7 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 導入版と公開アーカイブのハッシュの対応は、[VPM ハッシュ検査](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/check-vpm-hashes.sh)で確認できます。
 
 - Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
+- Foliage 公式 Package Manager サンプル: `Foliage Demo` を Unity の `Sample.Import` で導入し、`FoliageDemo`、`FoliageSpeciesDemo`、`FoliageLoadDemo` の3シーンを読み込みました。[構成レポート](reports/foliage-package-samples.html)に GameObject、Renderer、編集用 Component の件数を記録しています。植物の個体数や実測描画負荷を示す件数ではありません。
 - Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。Game View 用の World Descriptor を追加しました。[Inspect レポート](reports/trees.html)には Main Camera の near clip 設定について1件の警告が記録されています。
 - Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.html)は0エラー・0警告です。
 - Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.html)は0エラー・0警告です。
@@ -37,7 +38,7 @@ VRChat クライアントでの Pickup 同期と Contact 変形は未確認で�
 3. `Assets/SabaProps/PutItemsKitchenDemoV2/PutItemsKitchen.unity` または `Assets/SabaProps/SoftPropsDemoMotion/SoftPropsDemo.unity` を開き、ClientSim が有効であることを確認して Play を押します。Game View で Pickup の配置や家具との接触を操作し、Console のエラーと結果を記録します。
 4. Trees は `Assets/SabaProps/TreesBundledDemo/TreesDemo.unity` を開き、スポーン位置と樹木の見え方を確認します。配布デモの Main Camera の near clip は 0.300 のままです。
 
-2026-09-23、利用者から Put Items シーンの対話的な Play Mode 操作は概ね期待どおりとの報告がありました。具体的な操作項目と Console の結果は未記録のため、Pickup 配置補正の詳細や同期の合格判定には用いません。Soft Props の対話的な操作結果も未記録です。
+2026-09-23、利用者から Put Items シーンの対話的な Play Mode で、Pickup、配置時の補正、お盆の動作が概ね期待どおりとの報告がありました。操作ごとの条件、数値、Console の結果は未記録のため、補正精度や複数人同期の合格判定には用いません。Soft Props の対話的な操作結果も未記録です。
 
 無人バッチの Play Mode では ClientSim の起動までは確認できましたが、入力取得の `NullReferenceException` が連続したため、対話的な Game View の結果と混同しません。[観察記録](observations.html#無人バッチ-play-mode-での-clientsim-入力例外)を参照してください。
 
@@ -48,6 +49,10 @@ VRChat クライアントでの Pickup 同期と Contact 変形は未確認で�
 Foliage 0.6.0 のサンプルシーン。複数の植物種と配置区画を一つのシーンで確認できます。
 
 ![Foliage サンプルシーンの Unity Editor 描画](images/foliage-demo.png)
+
+公式 Package Manager サンプルの `FoliageSpeciesDemo`。9種の形状を同じシーンで確認できます。画像は配布シーンの Main Camera から出力した Unity Editor 描画です。
+
+![Foliage 公式サンプルの9種比較](images/foliage-species-demo.png)
 
 Trees 0.1.0 のサンプルシーン。樹種別の群植と生成された樹冠を確認できます。
 

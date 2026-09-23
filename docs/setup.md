@@ -67,7 +67,7 @@ SabaTools 検査が保存済みシーンファイルを変更しないことも�
 powershell -NoProfile -File scripts/run-unity-examples.ps1 -VerifyReadOnly
 ```
 
-配布サンプル由来の Foliage、Trees、Put Items、Soft Props、Digital Halo のシーン／アセットは Git 管理から除外しています。上記スクリプトが無い場合だけ生成またはインポートします。自作の Shader 比較シーンと検証コードは管理対象です。検査レポートは `docs/reports/` にあります。
+配布サンプル由来の Foliage、Trees、Put Items、Soft Props、Digital Halo のシーン／アセットは Git 管理から除外しています。上記スクリプトが無い場合だけ生成またはインポートします。Foliage 0.6.0 の公式 `Foliage Demo` サンプルは Package Manager の `Sample.Import` で取り込み、3シーンの構成を検査します。自作の Shader 比較シーンと検証コードは管理対象です。検査レポートは `docs/reports/` にあります。
 
 ## 記録
 

@@ -46,7 +46,7 @@ Trees 0.1.0 の公開パッケージは Foliage `0.4.0` を依存として指定
 
 ## 無人バッチ Play Mode での ClientSim 入力例外
 
-2026-09-23、ホスト Unity 2022.3.22f1 で Put Items の配布デモを `-batchmode` の Play Mode に入り、ClientSim の起動ログと初期化ログを確認しました。その後、`ClientSimPlayerController.GetMovementInput` で `NullReferenceException` が繰り返され、バッチ処理は正常終了できませんでした。当時のプロジェクト設定は Active Input Handling が旧 Input Manager のみでした。ClientSim Settings は旧・新両 Input System の有効化と Unity 再起動を要求しており、その後プロジェクト設定が「Both」に変更されました。利用者は対話的な Put Items の Play Mode 操作を概ね期待どおりと報告しています。ただしバッチモードを同じ設定で再検証していないため、例外の原因を確定したとは扱いません。VRChat クライアント内の挙動も未確認です。
+2026-09-23、ホスト Unity 2022.3.22f1 で Put Items の配布デモを `-batchmode` の Play Mode に入り、ClientSim の起動ログと初期化ログを確認しました。その後、`ClientSimPlayerController.GetMovementInput` で `NullReferenceException` が繰り返され、バッチ処理は正常終了できませんでした。当時のプロジェクト設定は Active Input Handling が旧 Input Manager のみでした。ClientSim Settings は旧・新両 Input System の有効化と Unity 再起動を要求しており、その後プロジェクト設定が「Both」に変更されました。利用者は対話的な Put Items の Play Mode で Pickup、配置時の補正、お盆の動作が概ね期待どおりと報告しています。ただしバッチモードを同じ設定で再検証していないため、例外の原因を確定したとは扱いません。VRChat クライアント内の挙動も未確認です。
 
 ## World Descriptor 保存時の SceneTemplate 例外
 

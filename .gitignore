@@ -14,7 +14,7 @@ projects/*/Assets/SerializedUdonPrograms*
 projects/*/Assets/UdonSharp*
 projects/world/Assets/SabaProps*
 projects/foliage/Assets/SabaProps*
-projects/avatar/Assets/Samples*
+projects/*/Assets/Samples*
 projects/*/ClientSimStorage/
 projects/*/ProjectSettings/PackageManagerSettings.asset
 *.csproj
