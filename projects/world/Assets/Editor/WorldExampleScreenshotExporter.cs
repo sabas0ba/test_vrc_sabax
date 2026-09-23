@@ -23,6 +23,12 @@ namespace SabaExample.Editor
                 "sabashader-core.png");
         }
 
+        public static void ExportShaderDebugSample()
+        {
+            Render("Assets/Samples/SabaShader/0.5.0/Debug Shader Demo/DebugShaderDemo.unity",
+                "sabashader-debug-modes.png");
+        }
+
         private static void Render(string scenePath, string fileName)
         {
             EditorSceneManager.OpenScene(scenePath);

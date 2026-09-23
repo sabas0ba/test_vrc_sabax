@@ -70,6 +70,8 @@ if (-not (Test-Path -LiteralPath $haloScene)) {
 
 Invoke-UnityExample world world-playmode-setup SabaExample.Editor.WorldPlayModeSetup.Prepare
 Invoke-UnityExample world trees-generation SabaExample.Editor.TreesGenerationAudit.GenerateAndInspect
+Invoke-UnityExample world sabashader-debug-import SabaExample.Editor.SabaShaderDebugSampleAudit.Import
+Invoke-UnityExample world sabashader-debug-audit SabaExample.Editor.SabaShaderDebugSampleAudit.Inspect
 
 $robotScene = Join-Path $repository 'projects/avatar/Packages/com.vrchat.avatars/Samples/Dynamics/Robot Avatar/Avatar Dynamics Robot Avatar PC.unity'
 $inspectScenes = @($treesScene, $putItemsScene, $softPropsScene, $shaderScene, $haloScene, $robotScene)
@@ -98,5 +100,6 @@ if ($RenderImages) {
     Invoke-UnityExample foliage foliage-package-screenshot SabaExample.Editor.FoliageScreenshotExporter.ExportPackageSample -Graphics
     Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldExampleScreenshotExporter.ExportProps -Graphics
     Invoke-UnityExample world sabashader-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShader -Graphics
+    Invoke-UnityExample world sabashader-debug-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShaderDebugSample -Graphics
     Invoke-UnityExample avatar digitalhalo-screenshot SabaExample.Editor.AccessoryScreenshotExporter.Export -Graphics
 }

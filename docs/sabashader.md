@@ -21,3 +21,9 @@ title: SabaShader の利用例
 下図はシーンの Main Camera から出力した Unity Editor 描画です。左が Standard、中央が Illust2D、右が Debug のワイヤーフレーム表示です。[再生成手順](setup.html#開発用ツール)の `-RenderImages` で更新できます。VRChat クライアント内の描画結果ではありません。
 
 ![Standard、SabaShader Illust2D、Debug の比較](images/sabashader-core.png)
+
+## 公式 Debug サンプル
+
+Package Manager に収録された SabaShader 0.5.0 の `Debug Shader Demo` を正規の Import 操作で取り込みました。18表示モードすべてについて、生成された Mesh、`SabaShader/Debug` Material、対応する整数 `_Mode`、Editor 上の Shader 対応状態を [検査レポート](reports/sabashader-debug-sample.html)に記録しています。下図はそのシーンの Main Camera による Unity Editor 描画です。VRChat クライアントでの描画や PC／Quest 間の差は未検証です。
+
+![SabaShader Debug 公式サンプルの18表示モード](images/sabashader-debug-modes.png)

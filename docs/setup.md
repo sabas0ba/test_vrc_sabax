@@ -48,8 +48,10 @@ bash scripts/check-vpm-hashes.sh
 パッケージ導入後、このリポジトリの3プロジェクトに限ってホストの Unity Editor を使用します。次を実行すると、サンプルの生成・読込、World Descriptor の準備、SabaTools レポートの更新を行います。
 
 ```powershell
-powershell -NoProfile -File scripts/run-unity-examples.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-unity-examples.ps1
 ```
+
+`-ExecutionPolicy Bypass` はこの PowerShell プロセスにだけ適用し、ホストの永続設定を変更しません。実行前にリポジトリ内のスクリプトを確認してください。
 
 このスクリプトは 2026-09-23 に通しで正常終了しました。隔離環境からホスト Unity を起動すると、ライセンスが有効でも LicensingClient の IPC 接続が拒否され、終了コード199になる場合があります。この環境では Unity バッチ処理を隔離外のホスト側で実行します。[観察記録](observations.html#隔離環境からの-unity-licensingclient-ipc-接続失敗)を参照してください。
 
@@ -58,16 +60,16 @@ powershell -NoProfile -File scripts/run-unity-examples.ps1
 Foliage、Trees、Put Items、Soft Props、SabaShader、Digital Halo の掲載画像も再生成する場合は、グラフィック出力が使えるホスト Unity で `-RenderImages` を指定します。
 
 ```powershell
-powershell -NoProfile -File scripts/run-unity-examples.ps1 -RenderImages
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-unity-examples.ps1 -RenderImages
 ```
 
 SabaTools 検査が保存済みシーンファイルを変更しないことも確認する場合は、`-VerifyReadOnly` を指定します。6件のシーンについて検査前後の SHA-256 を比較します。
 
 ```powershell
-powershell -NoProfile -File scripts/run-unity-examples.ps1 -VerifyReadOnly
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-unity-examples.ps1 -VerifyReadOnly
 ```
 
-配布サンプル由来の Foliage、Trees、Put Items、Soft Props、Digital Halo のシーン／アセットは Git 管理から除外しています。上記スクリプトが無い場合だけ生成またはインポートします。Foliage 0.6.0 の公式 `Foliage Demo` サンプルは Package Manager の `Sample.Import` で取り込み、3シーンの構成を検査します。自作の Shader 比較シーンと検証コードは管理対象です。検査レポートは `docs/reports/` にあります。
+配布サンプル由来の Foliage、Trees、Put Items、Soft Props、SabaShader Debug、Digital Halo のシーン／アセットは Git 管理から除外しています。上記スクリプトが無い場合だけ生成またはインポートします。Foliage 0.6.0 の公式 `Foliage Demo` と SabaShader 0.5.0 の公式 `Debug Shader Demo` は Package Manager の `Sample.Import` で取り込み、それぞれ3シーンと18表示モードを検査します。自作の Shader 比較シーンと検証コードは管理対象です。検査レポートは `docs/reports/` にあります。
 
 ## 記録
 

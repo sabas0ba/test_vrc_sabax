@@ -40,6 +40,15 @@ Trees 0.1.0 の公開パッケージは Foliage `0.4.0` を依存として指定
 
 同じシーンを再検査すると、推定 GPU メモリがともに 2.7 MB の `BASE` と `BODY` のテクスチャ行が入れ替わりました。後続のバッチ再実行でも元の順へ戻りました。レポートの3件・推定合計5.4 MB・0エラー・0警告は変わりません。公開版の `TextureUsageCollector` は推定バイト数だけでソートしており、同値の二次キーを指定していません。検査結果の意味が変わったとは扱わず、Git 差分のノイズとして記録します。
 
+## SabaShader 0.5.0 のライセンス表記の相違
+
+- 確認日: 2026-09-23
+- 対象: VPM 公開版 SabaShader 0.5.0
+- 種別: 同一パッケージ内の文書とメタデータの表記差
+- 上流報告: [sabas0ba/vrc_sabashader#17](https://github.com/sabas0ba/vrc_sabashader/issues/17)
+
+展開済みパッケージの `README.md` には MIT と記載される一方、同梱の `LICENSE.md` は Apache License 2.0、`package.json` の `license` は `Apache-2.0` でした。利用条件の解釈はここでは行わず、公開版の記載不一致として報告しました。
+
 ## 隔離環境からの Unity LicensingClient IPC 接続失敗
 
 2026-09-23、隔離された実行環境からホスト Unity をバッチ起動すると、LicensingClient の IPC チャネル接続が60秒でタイムアウトし、終了コード199を返しました。Unity Hub 上のアカウントとライセンスは有効です。同じ Unity 2022.3.22f1 とプロジェクトを隔離外で起動すると終了コード0で正常終了し、`scripts/run-unity-examples.ps1` も通しで成功しました。したがってパッケージの不具合ではなく、この作業環境のプロセス隔離と LicensingClient IPC の組合せによる制約です。Unity Editor のみ、IPC にアクセスできるホスト環境で実行します。

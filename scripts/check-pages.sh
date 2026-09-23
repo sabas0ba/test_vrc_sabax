@@ -15,16 +15,21 @@ paths=(
   /observations.html
   /reporting.html
   /reports/trees.html
+  /reports/trees-generation.html
+  /reports/foliage-package-samples.html
   /reports/putitems.html
   /reports/softprops.html
   /reports/sabashader.html
+  /reports/sabashader-debug-sample.html
   /reports/digital-halo.html
   /reports/vrchat-robot-avatar.html
   /images/foliage-demo.png
+  /images/foliage-species-demo.png
   /images/trees-demo.png
   /images/putitems-demo.png
   /images/softprops-demo.png
   /images/sabashader-core.png
+  /images/sabashader-debug-modes.png
   /images/digital-halo-demo.png
 )
 
