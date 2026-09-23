@@ -6,7 +6,7 @@
 
 | 対象 | 最初に確認する例 | 状態 |
 | --- | --- | --- |
-| [SabaProps](docs/sabaprops.md) | Foliage Demo、Trees Demo、Put Items、Soft Props | Unity Editor で生成・読込済み |
+| [SabaProps](docs/sabaprops.md) | Foliage Demo、Trees Demo、Put Items、Soft Props | Unity Editor で生成・読込済み。World Descriptor 準備済み、対話的な Game View 操作は未確認 |
 | [SabaShader](docs/sabashader.md) | Illust2D、Debug | 比較シーンを生成・Editor 描画確認済み |
 | [SabaTools](docs/sabatools.md) | Inspect Core と World／Avatar モジュール | 6件の検査レポートを生成済み |
 | [SabaAccessory](docs/sabaaccessory.md) | Digital Halo Demo | Unity Editor で読込・描画確認済み |

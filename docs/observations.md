@@ -43,3 +43,11 @@ Trees 0.1.0 の公開パッケージは Foliage `0.4.0` を依存として指定
 ## 隔離環境からの Unity LicensingClient IPC 接続失敗
 
 2026-09-23、隔離された実行環境からホスト Unity をバッチ起動すると、LicensingClient の IPC チャネル接続が60秒でタイムアウトし、終了コード199を返しました。Unity Hub 上のアカウントとライセンスは有効です。同じ Unity 2022.3.22f1 とプロジェクトを隔離外で起動すると終了コード0で正常終了し、`scripts/run-unity-examples.ps1` も通しで成功しました。したがってパッケージの不具合ではなく、この作業環境のプロセス隔離と LicensingClient IPC の組合せによる制約です。Unity Editor のみ、IPC にアクセスできるホスト環境で実行します。
+
+## 無人バッチ Play Mode での ClientSim 入力例外
+
+2026-09-23、ホスト Unity 2022.3.22f1 で Put Items の配布デモを `-batchmode` の Play Mode に入り、ClientSim の起動ログと初期化ログを確認しました。その後、`ClientSimPlayerController.GetMovementInput` で `NullReferenceException` が繰り返され、バッチ処理は正常終了できませんでした。Game View を持たない無人実行と入力系の組合せによる可能性があるため、SabaProps の不具合とは断定しません。対話的な Editor の Game View で操作し、同じ例外が再現するか切り分けます。VRChat クライアント内の挙動は未確認です。
+
+## World Descriptor 保存時の SceneTemplate 例外
+
+2026-09-23、`projects/world/` のシーンへ World Descriptor を追加して保存した際、Unity Editor の `UnityEditor.SceneTemplate.SceneTemplateAsset.CreatePipeline` から `ArgumentNullException` が記録されました。シーン保存とバッチ実行自体は成功し、次回起動後に Descriptor を読み取れています。発生源は Unity の SceneTemplate 処理であり、SabaProps の不具合とは断定しません。既存 Descriptor があるシーンは再保存しないよう準備処理を変更しました。

@@ -14,7 +14,7 @@ layout: default
 
 | Item | Value |
 |---|---|
-| GameObjects | 5 |
+| GameObjects | 6 |
 | Triangles | 2,304 |
 | Mesh Renderers | 3 |
 | Skinned Mesh Renderers | 0 |

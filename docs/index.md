@@ -16,4 +16,4 @@ title: test_vrc_sabax
 7. [観察結果と不具合の報告](reporting.html)
 8. [観察記録](observations.html)
 
-この `docs/` は GitHub Pages の branch deployment で公開できます。Repository Settings → Pages → Build and deployment で `Deploy from a branch`、対象 branch の `/docs` を選択します。公開後の URL は Pages の設定画面で確認します。
+この `docs/` は [GitHub Actions workflow](https://github.com/sabas0ba/test_vrc_sabax/blob/main/.github/workflows/pages.yml) で Jekyll ビルドします。Pull Request ではビルドのみを実行し、`main` への反映後に Pages へデプロイします。公開先は [GitHub Pages](https://sabas0ba.github.io/test_vrc_sabax/) です。

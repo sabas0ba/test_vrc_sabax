@@ -67,6 +67,8 @@ if (-not (Test-Path -LiteralPath $haloScene)) {
     Invoke-UnityExample avatar digitalhalo-demo SabaAccessory.DigitalHalo.Editor.DigitalHaloDemoInstaller.ImportAndOpenForValidation
 }
 
+Invoke-UnityExample world world-playmode-setup SabaExample.Editor.WorldPlayModeSetup.Prepare
+
 $robotScene = Join-Path $repository 'projects/avatar/Packages/com.vrchat.avatars/Samples/Dynamics/Robot Avatar/Avatar Dynamics Robot Avatar PC.unity'
 $inspectScenes = @($treesScene, $putItemsScene, $softPropsScene, $shaderScene, $haloScene, $robotScene)
 $hashesBefore = @{}

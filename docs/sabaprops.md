@@ -15,7 +15,7 @@ title: SabaProps の利用例
 | Put Items | `Tools > SabaProps > Put Items > Open Demo Scene` | Pickup を机・壁へ置いたときの補正と同期を確認できる |
 | Soft Props | `Tools > SabaProps > Soft Props > Open Demo Scene` | 家具への接触と復元を PC ワールドの実行時に確認できる |
 
-Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Props のワールド内挙動は VRChat のテスト実行で評価します。シーンの Play Mode だけで VRChat 固有の同期や Contacts の結果を確定しません。
+Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Props のワールド内挙動はまず ClientSim を有効にした Game View で確認します。シーンの Play Mode だけで VRChat 固有の複数人同期や Contacts の実機結果を確定しません。
 
 ## Unity Editor での結果
 
@@ -24,11 +24,20 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 導入版と公開アーカイブのハッシュの対応は、[VPM ハッシュ検査](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/check-vpm-hashes.sh)で確認できます。
 
 - Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
-- Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。[Inspect レポート](reports/trees.html)には `VRCSceneDescriptor` がないという1件の警告が記録されています。アップロードする場合は World 設定を追加する必要があります。
+- Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。Game View 用の World Descriptor を追加しました。[Inspect レポート](reports/trees.html)には Main Camera の near clip 設定について1件の警告が記録されています。
 - Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.html)は0エラー・0警告です。
 - Soft Props: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じスクリプトでインポートできます。[Inspect レポート](reports/softprops.html)は0エラー・0警告です。
 
 VRChat クライアントでの Pickup 同期と Contact 変形は未確認です。Trees と Foliage の公開版依存関係については [観察記録](observations.html) を参照してください。
+
+## Game View での確認
+
+1. ホスト Unity で、このリポジトリの `projects/world/` を開きます。他の Unity プロジェクトは開きません。
+2. [再生成スクリプト](setup.html#開発用ツール)を実行します。配布デモのうち Descriptor がない Trees シーンと自作の SabaShader シーンには、World Descriptor とスポーン地点が追加されます。Put Items と Soft Props の配布デモには元から Descriptor があります。
+3. `Assets/SabaProps/PutItemsKitchenDemoV2/PutItemsKitchen.unity` または `Assets/SabaProps/SoftPropsDemoMotion/SoftPropsDemo.unity` を開き、ClientSim が有効であることを確認して Play を押します。Game View で Pickup の配置や家具との接触を操作し、Console のエラーと結果を記録します。
+4. Trees は `Assets/SabaProps/TreesBundledDemo/TreesDemo.unity` を開き、スポーン位置と樹木の見え方を確認します。配布デモの Main Camera の near clip は 0.300 のままです。
+
+無人バッチの Play Mode では ClientSim の起動までは確認できましたが、入力取得の `NullReferenceException` が連続したため、Game View の操作結果として扱いません。対話的な Game View 操作は未確認です。[観察記録](observations.html#無人バッチ-play-mode-での-clientsim-入力例外)を参照してください。
 
 ## Editor 描画例
 

@@ -45,7 +45,7 @@ bash scripts/check-vpm-locks.sh
 bash scripts/check-vpm-hashes.sh
 ```
 
-パッケージ導入後、ホストの Unity Editor で次を実行すると、サンプルの生成・読込と SabaTools レポートの更新を行います。
+パッケージ導入後、このリポジトリの3プロジェクトに限ってホストの Unity Editor を使用します。次を実行すると、サンプルの生成・読込、World Descriptor の準備、SabaTools レポートの更新を行います。
 
 ```powershell
 powershell -NoProfile -File scripts/run-unity-examples.ps1
