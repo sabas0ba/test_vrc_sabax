@@ -21,6 +21,8 @@ Foliage と Trees の見た目や配置は Unity Editor、Put Items と Soft Pro
 
 2026-09-23、Unity 2022.3.22f1 で Foliage 0.6.0 の生成シーン、Trees 0.1.0 の3シーン、Put Items 0.1.1 と Soft Props 0.2.0 の配布デモを開けました。各バッチ実行で C# コンパイルエラーは0件でした。
 
+導入版と公開アーカイブのハッシュの対応は、[VPM ハッシュ検査](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/check-props-vpm.sh)で確認できます。
+
 - Foliage: `Assets/SabaProps/Foliage/Samples/FoliageDemo.unity` に単一種、パラメータ差、地形、混植、出力モード、季節の6区画を生成しました。生成物は容量が大きいため Git 管理から除外し、[再生成スクリプト](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/run-unity-examples.ps1)を用意しています。
 - Trees: `Assets/SabaProps/TreesBundledDemo/` に混交林、季節、負荷比較の3シーンを生成しました。生成物は Git 管理から除外しています。[Inspect レポート](reports/trees.md)には `VRCSceneDescriptor` がないという1件の警告が記録されています。アップロードする場合は World 設定を追加する必要があります。
 - Put Items: 配布デモシーンを取り込みました。シーン本体は Git 管理から除外し、同じ再生成スクリプトでインポートできます。[Inspect レポート](reports/putitems.md)は0エラー・0警告です。

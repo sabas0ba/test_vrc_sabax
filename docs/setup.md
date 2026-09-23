@@ -33,6 +33,12 @@ nix shell github:NixOS/nixpkgs/597283ad8aa0b331c788e97c4c262d58877074ef#vrc-get 
 
 このコマンドは dotfiles の開発シェルまたは同じ flake のコンテナ内で、作業ツリーを `/project` に配置して実行します。パッケージ本体は `vrc-get` が VPM リスティングから解決します。
 
+SabaProps の使用版は、公開リスティングが示す `zipSHA256` も [固定値](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/props-vpm-sha256.tsv)として記録しています。次の検査は現行リスティングのハッシュと各プロジェクトの VPM lock を照合します。同じ版のアーカイブが差し替わった場合は失敗します。これはアーカイブを再ダウンロードして照合する検査ではありません。
+
+```sh
+bash scripts/check-props-vpm.sh
+```
+
 パッケージ導入後、ホストの Unity Editor で次を実行すると、サンプルの生成・読込と SabaTools レポートの更新を行います。
 
 ```powershell
