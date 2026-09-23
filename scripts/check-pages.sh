@@ -22,6 +22,7 @@ paths=(
   /reports/sabashader.html
   /reports/sabashader-debug-sample.html
   /reports/sabashader-advanced-sample.html
+  /reports/sabatools-target-vs-scene.html
   /reports/digital-halo.html
   /reports/vrchat-robot-avatar.html
   /images/foliage-demo.png

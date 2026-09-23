@@ -19,3 +19,7 @@ title: SabaTools の利用例
 `scripts/run-unity-examples.ps1 -VerifyReadOnly` で検査前後の6シーンファイルの SHA-256 を比較し、全て不変でした。これは保存済みシーンファイルが書き換わらないことの確認であり、Editor の一時的なメモリ状態まで保証するものではありません。
 
 再生成時、Robot Avatar レポートでは同じ推定サイズのテクスチャ2件の行順だけが変わりました。集計値は不変です。[観察記録](observations.html#sabatools-同じサイズのテクスチャ行順が変わる)と[上流 Issue](https://github.com/sabas0ba/vrc_sabatools/issues/4)を参照してください。
+
+## Target と Active Scene の検査範囲
+
+Put Items 配布デモの `Put Items / Kitchen Demo` ルートに公開 API `InspectApi.Inspect` を適用し、`InspectApi.InspectScene` の結果と[比較](reports/sabatools-target-vs-scene.html)しました。Target は222 GameObject、Scene は224 GameObject です。Target 側だけ World の警告が1件出ました。`VRCSceneDescriptor` は選択したルートの外にあるためで、シーン全体の検査では警告0件です。これは検査範囲の違いであり、デモシーンの Descriptor 欠落や SabaTools の不具合とは判定しません。Inspect Window の `Scan Target`／`Scan Active Scene` ボタン自体は未操作です。

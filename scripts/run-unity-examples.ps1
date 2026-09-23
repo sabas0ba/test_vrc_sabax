@@ -85,6 +85,7 @@ if ($VerifyReadOnly) {
 }
 
 Invoke-UnityExample world sabatools-reports SabaExample.Editor.SabaToolsReportExporter.Export
+Invoke-UnityExample world sabatools-target-audit SabaExample.Editor.SabaToolsTargetAudit.Inspect
 Invoke-UnityExample avatar avatar-audit SabaExample.Editor.AvatarExamplesAudit.Run
 
 if ($VerifyReadOnly) {
