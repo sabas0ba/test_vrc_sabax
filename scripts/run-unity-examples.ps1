@@ -93,4 +93,5 @@ if ($RenderImages) {
     Invoke-UnityExample foliage foliage-screenshot SabaExample.Editor.FoliageScreenshotExporter.Export -Graphics
     Invoke-UnityExample world world-props-screenshots SabaExample.Editor.WorldExampleScreenshotExporter.ExportProps -Graphics
     Invoke-UnityExample world sabashader-screenshot SabaExample.Editor.WorldExampleScreenshotExporter.ExportShader -Graphics
+    Invoke-UnityExample avatar digitalhalo-screenshot SabaExample.Editor.AccessoryScreenshotExporter.Export -Graphics
 }

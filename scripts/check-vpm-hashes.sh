@@ -42,8 +42,8 @@ while IFS=$'\t' read -r index_url package_id version expected_hash; do
   checked=$((checked + 1))
 done < "$hashes_file"
 
-if ((checked != 7)); then
-  printf 'Expected 7 package hashes, found %d\n' "$checked" >&2
+if ((checked != 11)); then
+  printf 'Expected 11 package hashes, found %d\n' "$checked" >&2
   exit 1
 fi
 printf 'Verified %d VPM package hashes against public registries and locks\n' "$checked"

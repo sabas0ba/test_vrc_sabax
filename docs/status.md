@@ -20,7 +20,7 @@ title: 対象一覧
 | 3 | SabaTools Inspect for Avatars | 0.2.0 | avatar | 公式サンプルを検査済み |
 | 3 | SabaTools Inspect for Worlds | 0.1.0 | world | 3シーンを検査済み |
 | 3 | SabaTools Avatar Material Studio | 公開リスティングに無し | Avatars | 未実施 |
-| 4 | SabaAccessory Digital Halo | 0.2.1 | avatar／PC | デモ読込済み |
+| 4 | SabaAccessory Digital Halo | 0.2.1 | avatar／PC | デモ読込・Editor 描画確認済み |
 
 「公開リスティングに無し」はソースリポジトリに機能が無いことを意味しません。公開版の導入例は ALCOM／VPM から選択できるパッケージに限定します。未公開機能を検証する場合は、その目的とソース版の固定方法を別途記録します。
 

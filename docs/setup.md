@@ -39,7 +39,7 @@ nix shell github:NixOS/nixpkgs/597283ad8aa0b331c788e97c4c262d58877074ef#vrc-get 
 bash scripts/check-vpm-locks.sh
 ```
 
-SabaProps、SabaShader、Shader Core の使用版は、公開リスティングが示す `zipSHA256` も [固定値](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/vpm-sha256.tsv)として記録しています。次の検査は現行リスティングのハッシュと各プロジェクトの VPM lock を照合します。同じ版のアーカイブが差し替わった場合は失敗します。これはアーカイブを再ダウンロードして照合する検査ではありません。
+4製品と Shader Core の使用版は、公開リスティングが示す `zipSHA256` も [固定値](https://github.com/sabas0ba/test_vrc_sabax/blob/main/scripts/vpm-sha256.tsv)として記録しています。次の検査は現行リスティングのハッシュと各プロジェクトの VPM lock を照合します。同じ版のアーカイブが差し替わった場合は失敗します。これはアーカイブを再ダウンロードして照合する検査ではありません。
 
 ```sh
 bash scripts/check-vpm-hashes.sh
@@ -53,7 +53,7 @@ powershell -NoProfile -File scripts/run-unity-examples.ps1
 
 このスクリプトは 2026-09-23 に通しで正常終了しました。隔離環境からホスト Unity を起動すると、ライセンスが有効でも LicensingClient の IPC 接続が拒否され、終了コード199になる場合があります。この環境では Unity バッチ処理を隔離外のホスト側で実行します。[観察記録](observations.md#隔離環境からの-unity-licensingclient-ipc-接続失敗)を参照してください。
 
-Foliage、Trees、Put Items、Soft Props、SabaShader の掲載画像も再生成する場合は、グラフィック出力が使えるホスト Unity で `-RenderImages` を指定します。
+Foliage、Trees、Put Items、Soft Props、SabaShader、Digital Halo の掲載画像も再生成する場合は、グラフィック出力が使えるホスト Unity で `-RenderImages` を指定します。
 
 ```powershell
 powershell -NoProfile -File scripts/run-unity-examples.ps1 -RenderImages
