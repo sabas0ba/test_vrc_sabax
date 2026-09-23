@@ -21,6 +21,7 @@ paths=(
   /reports/softprops.html
   /reports/sabashader.html
   /reports/sabashader-debug-sample.html
+  /reports/sabashader-advanced-sample.html
   /reports/digital-halo.html
   /reports/vrchat-robot-avatar.html
   /images/foliage-demo.png
@@ -30,6 +31,7 @@ paths=(
   /images/softprops-demo.png
   /images/sabashader-core.png
   /images/sabashader-debug-modes.png
+  /images/sabashader-advanced-suite.png
   /images/digital-halo-demo.png
 )
 

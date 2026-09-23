@@ -29,6 +29,12 @@ namespace SabaExample.Editor
                 "sabashader-debug-modes.png");
         }
 
+        public static void ExportShaderAdvancedSample()
+        {
+            Render("Assets/Samples/SabaShader/0.5.0/Advanced Shader Suite Demo/AdvancedShaderSuiteDemo.unity",
+                "sabashader-advanced-suite.png");
+        }
+
         private static void Render(string scenePath, string fileName)
         {
             EditorSceneManager.OpenScene(scenePath);

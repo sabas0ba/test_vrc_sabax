@@ -27,3 +27,11 @@ title: SabaShader の利用例
 Package Manager に収録された SabaShader 0.5.0 の `Debug Shader Demo` を正規の Import 操作で取り込みました。18表示モードすべてについて、生成された Mesh、`SabaShader/Debug` Material、対応する整数 `_Mode`、Editor 上の Shader 対応状態を [検査レポート](reports/sabashader-debug-sample.html)に記録しています。下図はそのシーンの Main Camera による Unity Editor 描画です。VRChat クライアントでの描画や PC／Quest 間の差は未検証です。
 
 ![SabaShader Debug 公式サンプルの18表示モード](images/sabashader-debug-modes.png)
+
+## 公式 Advanced サンプル
+
+Package Manager の `Advanced Shader Suite Demo` を Import し、同梱手順に従って Shader Core の `SabaShader/Illust2D` で Decal、Surface Detail、Spatial Interior、Transition の4モジュールを有効にしました。設定後に Illust2D Shader の再インポートが必要です。このプロジェクトでは [再生成スクリプト](setup.html#開発用ツール)が不足するプロパティを検出した場合だけ再インポートします。
+
+[検査レポート](reports/sabashader-advanced-sample.html)には11項目の Mesh 頂点数、対応するモジュールプロパティ、Editor 上の Shader 対応状態を記録しました。下図は Unity Editor 描画です。Transition の Play Mode アニメーションと VRChat クライアント描画は未検証です。
+
+![SabaShader Advanced 公式サンプルの11項目](images/sabashader-advanced-suite.png)

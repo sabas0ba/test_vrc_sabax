@@ -69,7 +69,7 @@ SabaTools 検査が保存済みシーンファイルを変更しないことも�
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-unity-examples.ps1 -VerifyReadOnly
 ```
 
-配布サンプル由来の Foliage、Trees、Put Items、Soft Props、SabaShader Debug、Digital Halo のシーン／アセットは Git 管理から除外しています。上記スクリプトが無い場合だけ生成またはインポートします。Foliage 0.6.0 の公式 `Foliage Demo` と SabaShader 0.5.0 の公式 `Debug Shader Demo` は Package Manager の `Sample.Import` で取り込み、それぞれ3シーンと18表示モードを検査します。自作の Shader 比較シーンと検証コードは管理対象です。検査レポートは `docs/reports/` にあります。
+配布サンプル由来の Foliage、Trees、Put Items、Soft Props、SabaShader Debug／Advanced、Digital Halo のシーン／アセットは Git 管理から除外しています。上記スクリプトが無い場合だけ生成またはインポートします。Foliage 0.6.0 の公式 `Foliage Demo` と SabaShader 0.5.0 の公式 Debug／Advanced サンプルは Package Manager の `Sample.Import` で取り込み、それぞれ3シーン、18表示モード、11項目を検査します。Advanced サンプル用の4モジュール設定は `projects/world/ProjectSettings/jp.lilxyzw.shadercore.asset` に固定しました。自作の Shader 比較シーンと検証コードは管理対象です。検査レポートは `docs/reports/` にあります。
 
 ## 記録
 
